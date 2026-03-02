@@ -1,0 +1,36 @@
+.custom-btn {
+    background-color: transparent !important;
+    color: #772e0d !important;
+    border: 1px solid #772e0d !important;
+}
+
+.custom-btn:hover {
+    background-color: #772e0d !important;
+    color: white !important;
+}
+.book-section {
+    background:
+        linear-gradient(rgba(244, 232, 213, 0.85), rgba(244, 232, 213, 0.60)),
+        url("../public/bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.book-card {    
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 👇 THIS IS IMPORTANT PART */
+.book-card .card-body {
+    background: linear-gradient(to right, #f4e8d5, #e6c79c);
+    padding: 20px;
+}
