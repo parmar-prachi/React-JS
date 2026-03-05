@@ -3,65 +3,54 @@ import DynamicList from "./ DynamicList";
 
 function FeedbackForm({ addFeedback }) {
 
-    // Controlled States
-    const [formData, setFormData] = useState({
+    const initialState = {
         name: "",
         email: "",
         category: "",
         priority: "",
         description: ""
-    });
+    };
 
+    const [formData, setFormData] = useState(initialState);
     const [steps, setSteps] = useState([""]);
     const [suggestions, setSuggestions] = useState([""]);
     const [errors, setErrors] = useState({});
 
-    // Uncontrolled Refs
     const screenshotRef = useRef();
     const notesRef = useRef();
 
-    const handleChange = (e) => {
+    const handleChange = (e) =>
         setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
 
     const validate = () => {
-        let newErrors = {};
+        const err = {};
 
-        if (!formData.name) newErrors.name = "Name required";
-        if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
-            newErrors.email = "Valid email required";
-        if (!formData.category) newErrors.category = "Select category";
-        if (!formData.priority) newErrors.priority = "Select priority";
+        if (!formData.name) err.name = "Name required";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+            err.email = "Valid email required";
+        if (!formData.category) err.category = "Select category";
+        if (!formData.priority) err.priority = "Select priority";
         if (formData.description.length < 10)
-            newErrors.description = "Minimum 10 characters required";
+            err.description = "Minimum 10 characters required";
 
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
+        setErrors(err);
+        return !Object.keys(err).length;
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!validate()) return;
 
-        const newFeedback = {
+        addFeedback({
             ...formData,
             steps,
             suggestions,
             screenshot: screenshotRef.current.value,
             notes: notesRef.current.value,
             timestamp: new Date().toLocaleString()
-        };
-
-        addFeedback(newFeedback);
-
-        // Reset
-        setFormData({
-            name: "",
-            email: "",
-            category: "",
-            priority: "",
-            description: ""
         });
+
+        setFormData(initialState);
         setSteps([""]);
         setSuggestions([""]);
         screenshotRef.current.value = "";
@@ -72,20 +61,10 @@ function FeedbackForm({ addFeedback }) {
         <form className="card" onSubmit={handleSubmit}>
             <h2>Submit Feedback</h2>
 
-            <input
-                name="name"
-                placeholder="Full Name"
-                value={formData.name}
-                onChange={handleChange}
-            />
+            <input name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} />
             {errors.name && <p className="error">{errors.name}</p>}
 
-            <input
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-            />
+            <input name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
             {errors.email && <p className="error">{errors.email}</p>}
 
             <select name="category" value={formData.category} onChange={handleChange}>
@@ -105,15 +84,9 @@ function FeedbackForm({ addFeedback }) {
             </select>
             {errors.priority && <p className="error">{errors.priority}</p>}
 
-            <textarea
-                name="description"
-                placeholder="Detailed Description"
-                value={formData.description}
-                onChange={handleChange}
-            />
+            <textarea name="description" placeholder="Detailed Description" value={formData.description} onChange={handleChange} />
             {errors.description && <p className="error">{errors.description}</p>}
 
-            {/* Uncontrolled */}
             <input type="text" placeholder="Screenshot URL (optional)" ref={screenshotRef} />
             <textarea placeholder="Additional Notes (optional)" ref={notesRef}></textarea>
 
