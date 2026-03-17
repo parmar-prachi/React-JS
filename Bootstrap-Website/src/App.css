@@ -7,14 +7,14 @@
 }
 body {
   margin: 0 !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 100vh !important;
 }
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
 }
 .pt {
   padding-top: 130px;
@@ -979,4 +979,290 @@ body {
     padding: 30px 20px;
     margin-bottom: 50px;
   }
+}
+
+/* About Pages ::  */
+
+.text-teal {
+  color: #1cb09a !important;
+}
+
+.btn-outline-teal {
+  color:transparent !important;
+  border-color: #1cb09a !important;
+  color: black !important;
+}
+
+.btn-outline-teal:hover {
+  background-color:#1cb09a !important;
+  color: white !important;
+}
+
+.course-card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+}
+
+.course-img {
+  height:350px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.instructor-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: white;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #e0f7f5;
+  color: var(--teal-color);
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.booked-dot {
+  height: 8px;
+  width: 8px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* Breadcrumb :: */
+
+.breadcrumb-wrapper {
+  position: relative;
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-content {
+  position: relative;
+  z-index: 2;
+}
+.title-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.plane-icon {
+  width: 40px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.breadcrumb-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1a2b3c;
+  margin: 0;
+}
+
+.breadcrumb-nav {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-link {
+  color: #1a2b3c;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.home-link:hover {
+  color: #0fbba4;
+}
+
+.separator {
+  color: #1a2b3c;
+}
+
+.current-page {
+  color: #0fbba4;
+}
+
+.shape-right {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Shop page :: */
+
+.shop-sidebar {
+  position: sticky;
+  top: 20px;
+}
+
+.category-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.category-list li:hover {
+  color: #0fbba4;
+}
+
+.product-card {
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+}
+
+.product-img-wrapper {
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.product-overlay {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.4s;
+}
+
+.product-card:hover .product-overlay {
+  bottom: 20px;
+}
+
+/* Cart Page :: */
+
+.cart-table thead th {
+  border-top: none;
+  color: #1a2b3c;
+  padding: 20px;
+  font-weight: 700;
+}
+
+.cart-table tbody td {
+  padding: 20px;
+}
+
+.btn-outline-danger {
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.bg-light.rounded-4 {
+  border: 1px solid #eee;
+}
+
+/* Login page :: */
+
+.login-header {
+  color: #1a2b3c;
+  font-size: 2rem;
+}
+
+.custom-input:focus,
+.custom-input-group .form-control:focus {
+  box-shadow: none;
+  border-color: #0fbba4;;
+}
+
+.text-primary-custom {
+  color: #4361ee;
+}
+
+.btn-teal {
+  background-color: #0fbba4;;
+  transition: background 0.3s ease;
+}
+
+.btn-teal:hover {
+  background-color: #0d9e8b;
+  color: white;
+}
+
+.form-check-input:checked {
+  background-color: #0fbba4;;
+  border-color: #0fbba4;;
+}
+
+.login-card {
+  border: 1px solid #f0f0f0;
+}
+
+/* register page :: */
+
+.btn-teal {
+  background-color: #0fbba4 !important;
+  /* The teal from your UI */
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-teal:hover {
+  background-color: #0d9e8b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(15, 187, 164, 0.3);
+}
+
+.custom-input:focus {
+  border-color: #0fbba4;
+  box-shadow: 0 0 0 0.25rem rgba(15, 187, 164, 0.1);
+}
+
+.register-card {
+  border: 1px solid #f0f0f0 !important;
 }

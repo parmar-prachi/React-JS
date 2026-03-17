@@ -6,6 +6,7 @@ import {
     FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn,
     FaRegHeart, FaShoppingCart, FaArrowRight
 } from 'react-icons/fa';
+import { Cart } from 'react-bootstrap-icons';
 
 const Header = () => {
     return (
@@ -20,10 +21,15 @@ const Header = () => {
                             <span className="d-none d-lg-inline"><FaRegClock className="me-2" /> Mon - Sat: 8:00 - 15:00</span>
                         </div>
                         <div className="d-flex align-items-center gap-4">
-                            <div className="auth-links">
-                                <FaUser className="me-3" /> 
-                                <span className=" me-2 register-btn">Login</span>
-                                / <span className="ms-2 register-btn">Register</span>
+                            <div className="auth-links d-flex align-items-center">
+                                <FaUser className="me-2" />
+                                <Link to="/login" className="text-white text-decoration-none hover-teal">
+                                    Login
+                                </Link>
+                                <span className="mx-2">/</span>
+                                <Link to="/register" className="text-white text-decoration-none hover-teal">
+                                    Register
+                                </Link>
                             </div>
                             <div className="social-links d-flex gap-3 border-start ps-4 d-none d-sm-flex">
                                 <small>Follow us:</small>
@@ -51,7 +57,7 @@ const Header = () => {
                         <Nav className="mx-auto fw-medium">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <NavDropdown title="Pages" id="pages-nav">
-                                <NavDropdown.Item as={Link} to="/about">About</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/instructor">Instructor</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link as={Link} to="/shop">Shop</Nav.Link>
                             <Nav.Link as={Link} to="/courses">Course</Nav.Link>
@@ -61,7 +67,9 @@ const Header = () => {
 
                         <div className="d-flex align-items-center gap-3">
                             <div className="icon-badge-wrapper"><FaRegHeart size={20} /><span className="badge-count">0</span></div>
-                            <div className="icon-badge-wrapper"><FaShoppingCart size={20} /><span className="badge-count">0</span></div>
+                            <div className="icon-badge-wrapper">
+                                <Link to="/cart" className="icon-badge-wrapper text-decoration-none text-reset"></Link>
+                                <FaShoppingCart size={20}/><span className="badge-count">0</span></div>
                             <Button className="btn-start-trial rounded-pill px-4 py-2 border-0">
                                 Start Free Trail <FaArrowRight className="ms-2" />
                             </Button>
