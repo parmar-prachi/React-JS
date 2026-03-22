@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Main Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00d4ff;
+}
+
+/* Form Card */
+.form-card {
+  background: #2f2f4a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1f1f35;
+  color: #fff;
+}
+
+/* Textarea */
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00d4ff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00aacc;
+}
+
+/* Result Card */
+.result-card {
+  background: #2f2f4a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Labels */
+.result-card p {
+  margin: 8px 0;
+}
+
+/* Status */
+.success {
+  color: #00ffae;
+}
+
+.error {
+  color: #ff4d4d;
+}
+
+/* Loading */
+.loading {
+  color: #ffd166;
+}
+
+/* JSON Output */
+pre {
+  background: #1f1f35;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+  max-height: 300px;
+}
